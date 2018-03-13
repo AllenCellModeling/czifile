@@ -21,7 +21,7 @@ Requirements
 + `Czifle.pyx 2017.07.20 <http://www.lfd.uci.edu/~gohlke/>`_
   (for decoding JpegXrFile and JpgFile images)
 	- Cython 0.25 <http://cython.org>
-	- jpeglib v9 <http://iji.org>
+	- jpeglib v9 <http://ijg.org>
 	- jxrlib 0.2.0 <https://github.com/glencoesoftware/jxrlib>
 + A python distuitls compatible C compiler
 
