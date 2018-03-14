@@ -1,1 +1,11 @@
 # This file is for notes for the hotfix
++ pip install Cython
++ openssl/md5.h is a requirement for jxrlib
++ install jre/jdk 
++ swig is a requirement for jxrlib
+	- python tests are a mess. Don't even try to run them. 
++ JXRlib:
+	- export JAVA_INCLUDE="/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/include"
+	- make
+	- [if you don't have JAVA_INCLUDE right you'll get errors]
+

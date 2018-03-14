@@ -58,18 +58,21 @@ try:
 
     jxrlib_dir = 'czifile/jxrlib'
     jpeg_dir = 'czifile/libjpeg'
-    include_dirs = [numpy.get_include()]
+    include_dirs = [numpy.get_include(),'/usr/local/include','/usr/local/include/libjxr']
     include_dirs += jpeg_dir
     include_dirs += [os.path.join(jxrlib_dir, d) for d in 
                      ('jxrgluelib', 'image/sys', 'common/include')]
+    library_dirs = ['/usr/local/lib']	
     
-    extra_compile_args = ['-std=c11', 
+    extra_compile_args = ['-std=c11','-D__ANSI__' 
                           '-mmacosx-version-min=10.7']
 
     setup_args['ext_modules'] = [
         Extension('czifile._czifile',
                   ['czifile/_czifile.pyx'],
                   include_dirs=include_dirs, 
+                  library_dirs=library_dirs,
+                  libraries=['jpeg','jpegxr','jxrglue'],
                   extra_compile_args=extra_compile_args)
     ]
 except ImportError:
