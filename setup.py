@@ -64,7 +64,7 @@ try:
                      ('jxrgluelib', 'image/sys', 'common/include')]
     library_dirs = ['/usr/local/lib']	
     
-    extra_compile_args = ['-std=c11','-D__ANSI__' 
+    extra_compile_args = ['-std=c11','-D__ANSI__',
                           '-mmacosx-version-min=10.7']
 
     setup_args['ext_modules'] = [
