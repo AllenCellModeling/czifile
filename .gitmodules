@@ -1,6 +1,3 @@
 [submodule "czifile/libjpeg"]
 	path = czifile/libjpeg
 	url = https://github.com/LuaDist/libjpeg
-[submodule "czifile/jxrlib"]
-	path = czifile/jxrlib
-	url = git@github.com:AllenCellModeling/jxrlib.git
