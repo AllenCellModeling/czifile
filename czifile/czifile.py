@@ -144,8 +144,10 @@ try:
         from . import _czifile
     else:
         import _czifile
-except ImportError:
+except ImportError as e:
+    jsmessage = "[JS] Exception details: %s ".format(e.message())
     warnings.warn(
+        jsmessage +
         "ImportError: No module named '_czifile'. "
         "Decoding of JXR and JPEG encoded images will not be available. "
         "Czifile.pyx can be obtained at http://www.lfd.uci.edu/~gohlke/")

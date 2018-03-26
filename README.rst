@@ -14,12 +14,16 @@ microscopy experiments.
 
 Requirements
 ------------
-* `CPython 3.6 64-bit <http://www.python.org>`_
-* `Numpy 1.13 <http://www.numpy.org>`_
-* `Scipy 0.19 <http://www.scipy.org>`_
-* `Tifffile.py 2017.09.12 <http://www.lfd.uci.edu/~gohlke/>`_
-* `Czifle.pyx 2017.07.20 <http://www.lfd.uci.edu/~gohlke/>`_
++ `CPython 3.6 64-bit <http://www.python.org>`_
++ `Numpy 1.13 <http://www.numpy.org>`_
++ `Scipy 0.19 <http://www.scipy.org>`_
++ `Tifffile.py 2017.09.12 <http://www.lfd.uci.edu/~gohlke/>`_
++ `Czifle.pyx 2017.07.20 <http://www.lfd.uci.edu/~gohlke/>`_
   (for decoding JpegXrFile and JpgFile images)
+	- Cython 0.25 <http://cython.org>
+	- jpeglib v9 <http://ijg.org>
+	- jxrlib 0.2.0 <https://github.com/glencoesoftware/jxrlib>
++ A python distuitls compatible C compiler
 
 Revisions
 ---------
