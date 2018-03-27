@@ -145,7 +145,7 @@ try:
     else:
         import _czifile
 except ImportError as e:
-    jsmessage = "[JS] Exception details: %s ".format(e.message())
+    jsmessage = "[JS] Exception details: {0} ".format(str(e))
     warnings.warn(
         jsmessage +
         "ImportError: No module named '_czifile'. "
