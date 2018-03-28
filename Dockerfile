@@ -2,16 +2,13 @@
 FROM ubuntu:trusty
 
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
-    libglib2.0-0 libxext6 libsm6 libxrender1 cmake screen tmux libtiff5-dev apt-add-repository \
-    apt-file \
-    git && \
-    apt-file update && \
+    libglib2.0-0 libxext6 libsm6 libxrender1 cmake screen tmux libtiff5-dev add-apt-repository \
+    software-properties-common git && \
     apt-get clean
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN sudo apt-get install software-properties-common && \
-    add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
+RUN add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
     add-apt-repository "deb-src http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
     add-apt-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
     add-apt-repository "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
