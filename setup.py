@@ -56,16 +56,15 @@ try:
     import numpy
     setup_args['cmdclass']= {'build_ext': build_ext}
 
-    jxrlib_dir = 'czifile/jxrlib'
+    jxrlib_dir = '/usr/local/include/libjxr'
     jpeg_dir = 'czifile/libjpeg'
     include_dirs = [numpy.get_include(),'/usr/local/include','/usr/local/include/libjxr']
-    include_dirs += jpeg_dir
+#    include_dirs += jpeg_dir
     include_dirs += [os.path.join(jxrlib_dir, d) for d in 
-                     ('jxrgluelib', 'image/sys', 'common/include')]
+                     ('glue', 'image', 'common', 'image/x86' )]
     library_dirs = ['/usr/local/lib']	
     
-    extra_compile_args = ['-std=c11','-D__ANSI__',
-                          '-mmacosx-version-min=10.7']
+    extra_compile_args = ['-fPIC', '-std=c11','-D__ANSI__']
 
     setup_args['ext_modules'] = [
         Extension('czifile._czifile',
