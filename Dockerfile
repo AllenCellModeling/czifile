@@ -6,6 +6,8 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
     git && \
     apt-get clean
 
+RUN RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test && \
     apt-add-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
     apt-add-repository "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
