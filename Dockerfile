@@ -11,10 +11,10 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 RUN sudo apt-get install software-properties-common && \
-    apt-add-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
-    apt-add-repository "deb-src http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
-    apt-add-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
-    apt-add-repository "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
+    add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
+    add-apt-repository "deb-src http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
+    add-apt-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
+    add-apt-repository "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update && \
     apt-get install -y apt-get install clang-5.0 clang-tools-5.0 clang-5.0-doc && \
