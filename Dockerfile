@@ -3,13 +3,16 @@ FROM ubuntu:trusty
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
+RUN apt-get update -y 
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main"
+
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 cmake screen tmux libtiff5-dev \
-    software-properties-common git && \
+    git && \
     apt-get clean
 
-RUN apt-get install add-apt-repository && \
-    add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
+RUN add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
     add-apt-repository "deb-src http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
     add-apt-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
     add-apt-repository "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
