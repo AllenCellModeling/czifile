@@ -34,13 +34,13 @@ RUN cd ~ && \
     git submodule update --init czifile/libjpeg && \
     git submodule update --init czifile/libjxr 
 
-RUN cd ~/czifile/libjpeg && \
+RUN cd ~/czifile/czifile/libjpeg && \
     export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:${LD_LIBRARY_PATH} && \
     ./configure && \
     make && \
     make install
 
-RUN cd ~/czifile/libjxr && \
+RUN cd ~/czifile/czifile/libjxr && \
     git checkout master && \
     git pull && \
     mkdir build && \
