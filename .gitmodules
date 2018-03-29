@@ -3,4 +3,4 @@
 	url = https://github.com/LuaDist/libjpeg
 [submodule "hotfix"]
 	path = czifile/libjxr
-	url = git@github.com:AllenCellModeling/jxrlib.git
+	url = https://github.com/AllenCellModeling/jxrlib.git
