@@ -52,9 +52,9 @@ RUN cd ~/czifile/czifile/libjxr && \
     make install 
 
 RUN cd ~/czifile && \
-    pip3 install setuptools && \
-    python3 setup.py build && \
-    python3 setup.py install 
+    pip install setuptools && \
+    python setup.py build && \
+    python setup.py install 
 
 
 
