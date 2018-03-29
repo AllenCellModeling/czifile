@@ -53,6 +53,7 @@ RUN cd ~/czifile/czifile/libjxr && \
 
 RUN cd ~/czifile && \
     /opt/conda/bin/pip install setuptools && \
+    /opt/conda/bin/pip install tifffile && \
     /opt/conda/bin/python ./setup.py build && \
     /opt/conda/bin/python ./setup.py install 
 
