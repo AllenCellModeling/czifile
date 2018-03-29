@@ -32,15 +32,17 @@ RUN cd ~ && \
     cd czifile && \
     git checkout hotfix && \
     git submodule update --init czifile/libjpeg && \
-    git submodule update --init czifile/libjxr && \
-    cd czifile/libjpeg && \
- #   export CC=/usr/bin/clang-5.0 && \
- #   export CXX=/usr/bin/clang++-5.0 && \
+    git submodule update --init czifile/libjxr 
+
+RUN cd ~/czifile/libjpeg && \
     export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:${LD_LIBRARY_PATH} && \
     ./configure && \
     make && \
-    make install && \
-    cd ../libjxr && \
+    make install
+
+RUN cd ~/czifile/libjxr && \
+    git checkout master && \
+    git pull && \
     mkdir build && \
     cd build && \
     cmake ../ && \
