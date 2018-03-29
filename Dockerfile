@@ -28,7 +28,7 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
     echo "conda activate base" >> ~/.bashrc
 
 RUN cd ~ && \
-    git clone git@github.com:AllenCellModeling/czifile.git && \
+    git clone https://github.com/AllenCellModeling/czifile.git && \
     cd czifile && \
     git checkout hotfix && \
     git submodule update --init czifile/libjpeg && \
