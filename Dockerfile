@@ -47,8 +47,9 @@ RUN cd ~/czifile/czifile/libjxr && \
     cd build && \
     cmake ../ && \
     make && \
-    make install && \
-    cd ~/czifile && \
+    make install 
+
+RUN cd ~/czifile && \
     python3 setup.py build && \
     python3 setup.py install 
 
