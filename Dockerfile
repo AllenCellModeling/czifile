@@ -34,8 +34,8 @@ RUN cd ~ && \
     git submodule update --init czifile/libjpeg && \
     git submodule update --init czifile/libjxr && \
     cd czifile/libjpeg && \
-    export CC=/usr/bin/clang-5.0 && \
-    export CXX=/usr/bin/clang++-5.0 && \
+ #   export CC=/usr/bin/clang-5.0 && \
+ #   export CXX=/usr/bin/clang++-5.0 && \
     export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:${LD_LIBRARY_PATH} && \
     ./configure && \
     make && \
@@ -60,23 +60,23 @@ RUN cd ~ && \
 #   python: numpy pyyaml scipy ipython mkl
 
 # install more python stuff
-RUN conda install -c conda-forge -y \
-    jupyter \
-    jupyterlab \
-    jupyter_contrib_nbextensions \
-    ipywidgets \
-    nodejs \
-    natsort \
-    matplotlib \
-    scikit-learn \
-    scikit-image \
-    pandas \
-    xlrd \
-    tqdm \
-    seaborn \
-    yapf \
-    fire \
-    && conda clean -tipsy
+# RUN conda install -c conda-forge -y \
+#     jupyter \
+#     jupyterlab \
+#     jupyter_contrib_nbextensions \
+#     ipywidgets \
+#     nodejs \
+#     natsort \
+#     matplotlib \
+#     scikit-learn \
+#     scikit-image \
+#     pandas \
+#     xlrd \
+#     tqdm \
+#     seaborn \
+#     yapf \
+#     fire \
+#     && conda clean -tipsy
 
 # pip install since conda version out of date
 #RUN pip install tensorflow tensorboard
