@@ -11,7 +11,7 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
 RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update -y && \
     echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
-    add-apt-repository "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" && \
+    echo "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update && \
     apt-get install -y apt-get install clang-5.0 clang-tools-5.0 clang-5.0-doc && \
