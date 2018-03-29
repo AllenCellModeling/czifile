@@ -40,6 +40,8 @@ RUN cd ~/czifile/czifile/libjpeg && \
     make && \
     make install
 
+RUN apt-get install -y build-essential
+
 RUN cd ~/czifile/czifile/libjxr && \
     git checkout master && \
     git pull && \
