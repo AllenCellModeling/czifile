@@ -3,13 +3,9 @@ FROM ubuntu:trusty
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN apt-get update -y 
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main"
-
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 cmake screen tmux libtiff5-dev \
-    git && \
+    git software-properties-common && \
     apt-get clean
 
 RUN add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" && \
