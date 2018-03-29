@@ -8,17 +8,17 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
     git software-properties-common && \
     apt-get clean
 
-RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
-    echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
-    echo "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
-    wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
-    apt-get update && \
-    apt-get install -y apt-get install clang-5.0 clang-tools-5.0 clang-5.0-doc && \
-    apt-get install -y libclang-common-5.0-dev libclang-5.0-dev libclang1-5.0 && \
-    apt-get install -y libclang1-5.0-dbg libllvm-5.0-ocaml-dev libllvm5.0 && \
-    apt-get install -y libllvm5.0-dbg lldb-5.0 llvm-5.0 llvm-5.0-dev llvm-5.0-doc && \
-    apt-get install -y llvm-5.0-examples llvm-5.0-runtime clang-format-5.0 && \
-    apt-get install -y python-clang-5.0 libfuzzer-5.0-dev
+# RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
+#     echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
+#     echo "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
+#     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+#     apt-get update && \
+#     apt-get install -y apt-get install clang-5.0 clang-tools-5.0 clang-5.0-doc && \
+#     apt-get install -y libclang-common-5.0-dev libclang-5.0-dev libclang1-5.0 && \
+#     apt-get install -y libclang1-5.0-dbg libllvm-5.0-ocaml-dev libllvm5.0 && \
+#     apt-get install -y libllvm5.0-dbg lldb-5.0 llvm-5.0 llvm-5.0-dev llvm-5.0-doc && \
+#     apt-get install -y llvm-5.0-examples llvm-5.0-runtime clang-format-5.0 && \
+#     apt-get install -y python-clang-5.0 libfuzzer-5.0-dev
 
 RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O ~/anaconda.sh \
     && /bin/bash ~/anaconda.sh  -b -p /opt/conda && \
