@@ -52,9 +52,9 @@ RUN cd ~/czifile/czifile/libjxr && \
     make install 
 
 RUN cd ~/czifile && \
-    pip install setuptools && \
-    python setup.py build && \
-    python setup.py install 
+    /opt/conda/bin/pip install setuptools && \
+    /opt/conda/bin/python ./setup.py build && \
+    /opt/conda/bin/python ./setup.py install 
 
 
 
