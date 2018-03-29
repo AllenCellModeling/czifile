@@ -9,7 +9,6 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
     apt-get clean
 
 RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
-    apt-get update -y && \
     echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
     echo "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main" >> /etc/apt/sources.list && \
     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
