@@ -58,7 +58,7 @@ RUN cd ~/czifile && \
     /opt/conda/bin/python ./setup.py install 
 
 
-
+EXPOSE 8888
 
 
 
