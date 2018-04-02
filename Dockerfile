@@ -26,7 +26,7 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc 
 
-RUN /bin/bash -c "conda activate"
+RUN echo "conda activate" >> ~/.bashrc
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
