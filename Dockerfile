@@ -32,9 +32,9 @@ RUN ["/bin/bash", "-c", "/opt/conda/bin/conda update -y -n base conda"]
 
 RUN ["/bin/bash", "-c", "/opt/conda/bin/conda install -y nodejs"] 
 
-RUN ["/bin/bash", "-c", "/opt/conda/bin/pip install --yes npm"] 
+RUN ["/bin/bash", "-c", "yes | /opt/conda/bin/pip install npm"] 
 
-RUN ["/bin/bash", "-c", "/opt/conda/bin/pip install --yes react react-dom"]
+RUN ["/bin/bash", "-c", "yes | /opt/conda/bin/pip install react react-dom"]
 
 RUN ["/bin/bash", "-c", "/opt/conda/bin/jupyter labextension install @jupyter-widgets/jupyterlab-manager"]
 
