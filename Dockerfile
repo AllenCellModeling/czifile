@@ -28,9 +28,8 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
-RUN /bin/bash && \
-    conda install -y -q nodejs && \
-    pip install -y npm
+RUN ["/bin/bash", "-c", "conda install -y -q nodejs"] && \
+    ["/bin/bash", "-c", "pip install -y npm"] 
 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
