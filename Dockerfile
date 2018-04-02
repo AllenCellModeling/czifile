@@ -28,10 +28,11 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
-RUN ["/bin/bash", "-c", "conda install -y -q nodejs"] && \
-    ["/bin/bash", "-c", "pip install -y npm"] 
+RUN ["/bin/bash", "-c", "/opt/conda/bin/conda update -y -n base conda"] && \
+    ["/bin/bash", "-c", "/opt/conda/bin/conda install -y -q nodejs"] && \
+    ["/bin/bash", "-c", "/opt/conda/bin/pip install -y npm"] 
 
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
+RUN ["/bin/bash", "-c", "/opt/conda/bin/jupyter labextension install @jupyter-widgets/jupyterlab-manager"]
 
 # RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/matplotlib/matplotlibrc
 
