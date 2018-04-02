@@ -30,7 +30,9 @@ COPY jupyter_notebook_config.py /root/.jupyter/
 
 RUN ["/bin/bash", "-c", "/opt/conda/bin/conda update -y -n base conda"] && \
     ["/bin/bash", "-c", "/opt/conda/bin/conda install -y nodejs"] && \
-    ["/bin/bash", "-c", "/opt/conda/bin/pip install -y npm"] 
+    ["/bin/bash", "-c", "/opt/conda/bin/pip install --yes npm"] && \
+    ["/bin/bash", "-c", "/opt/conda/bin/pip install --yes react react-dom"]
+
 
 RUN ["/bin/bash", "-c", "/opt/conda/bin/jupyter labextension install @jupyter-widgets/jupyterlab-manager"]
 
