@@ -36,7 +36,7 @@ RUN ["/bin/bash", "-c", "yes | /opt/conda/bin/pip install --upgrade pip"]
 
 RUN ["/bin/bash", "-c", "yes | /opt/conda/bin/pip install npm"] 
 
-RUN ["/bin/bash", "-c", "yes | /opt/conda/bin/pip install react react-dom"]
+RUN ["/bin/bash", "-c", "yes | /opt/conda/bin/pip install react"]
 
 RUN ["/bin/bash", "-c", "/opt/conda/bin/jupyter labextension install @jupyter-widgets/jupyterlab-manager"]
 
