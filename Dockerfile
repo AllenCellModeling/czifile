@@ -30,7 +30,7 @@ RUN echo "conda activate" >> ~/.bashrc
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
-RUN source ~/.bashrc && \
+RUN /bin/bash && \
     conda install nodejs
 
 RUN pip install npm 
