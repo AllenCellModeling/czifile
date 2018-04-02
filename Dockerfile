@@ -26,48 +26,48 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc 
 
-RUN echo "conda activate" >> ~/.bashrc
+# RUN echo "conda activate" >> ~/.bashrc
 
-COPY jupyter_notebook_config.py /root/.jupyter/
+# COPY jupyter_notebook_config.py /root/.jupyter/
 
-RUN /bin/bash && \
-    conda install nodejs
+# RUN /bin/bash && \
+#     conda install nodejs
 
-RUN pip install npm 
+# RUN pip install npm 
 
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
+# RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
-RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/matplotlib/matplotlibrc
+# RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/matplotlib/matplotlibrc
 
-RUN cd ~ && \
-    git clone https://github.com/AllenCellModeling/czifile.git && \
-    cd czifile && \
-    git checkout hotfix && \
-    git submodule update --init czifile/libjpeg && \
-    git submodule update --init czifile/libjxr 
+# RUN cd ~ && \
+#     git clone https://github.com/AllenCellModeling/czifile.git && \
+#     cd czifile && \
+#     git checkout hotfix && \
+#     git submodule update --init czifile/libjpeg && \
+#     git submodule update --init czifile/libjxr 
 
-RUN cd ~/czifile/czifile/libjpeg && \
-    export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:${LD_LIBRARY_PATH} && \
-    ./configure && \
-    make && \
-    make install
+# RUN cd ~/czifile/czifile/libjpeg && \
+#     export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:${LD_LIBRARY_PATH} && \
+#     ./configure && \
+#     make && \
+#     make install
 
-RUN apt-get install -y build-essential firefox
+# RUN apt-get install -y build-essential firefox
 
-RUN cd ~/czifile/czifile/libjxr && \
-    git checkout master && \
-    git pull && \
-    mkdir build && \
-    cd build && \
-    cmake ../ && \
-    make && \
-    make install 
+# RUN cd ~/czifile/czifile/libjxr && \
+#     git checkout master && \
+#     git pull && \
+#     mkdir build && \
+#     cd build && \
+#     cmake ../ && \
+#     make && \
+#     make install 
 
-RUN cd ~/czifile && \
-    /opt/conda/bin/pip install setuptools && \
-    /opt/conda/bin/pip install tifffile && \
-    /opt/conda/bin/python ./setup.py build && \
-    /opt/conda/bin/python ./setup.py install 
+# RUN cd ~/czifile && \
+#     /opt/conda/bin/pip install setuptools && \
+#     /opt/conda/bin/pip install tifffile && \
+#     /opt/conda/bin/python ./setup.py build && \
+#     /opt/conda/bin/python ./setup.py install 
 
 
 EXPOSE 8888
