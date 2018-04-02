@@ -25,7 +25,17 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
     rm ~/anaconda.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    echo "conda activate base" >> ~/.bashrc
+    echo "conda activate base" >> ~/.
+
+COPY jupyter_notebook_config.py /root/.jupyter/
+
+RUN conda install nodejs
+
+RUN pip install npm 
+
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/matplotlib/matplotlibrc
 
 RUN cd ~ && \
     git clone https://github.com/AllenCellModeling/czifile.git && \
