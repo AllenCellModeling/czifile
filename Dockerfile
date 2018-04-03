@@ -75,6 +75,7 @@ RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/m
 #     /opt/conda/bin/python ./setup.py install 
 
 
+EXPOSE 22
 EXPOSE 8888
 EXPOSE 9999
 EXPOSE 6006
