@@ -3,9 +3,9 @@ FROM ubuntu:trusty
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
+RUN apt-get update --fix-missing && apt-get -y upgrade && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 cmake screen tmux libtiff5-dev \
-    git software-properties-common && \
+    git software-properties-common openssh-server && \
     apt-get clean
 
 # RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
