@@ -23,12 +23,7 @@ RUN apt-get update --fix-missing && apt-get -y upgrade && apt-get install -y wge
 RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O ~/anaconda.sh \
     && /bin/bash ~/anaconda.sh  -b -p /opt/conda && \
     rm ~/anaconda.sh && \
-    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-    echo "conda activate" >> ~/.bashrc 
-
-COPY jupyter_notebook_config.py /root/.jupyter/
-COPY ssh_config /etc/ssh/
-
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh 
 
 
 RUN ["/bin/bash", "-c", "echo \". /opt/conda/etc/profile.d/conda.sh\" >> ~/.bashrc"]
@@ -48,6 +43,10 @@ RUN ["/bin/bash", "-c", "/opt/conda/bin/jupyter labextension install @jupyter-wi
 RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/matplotlib/matplotlibrc
 
 RUN ["/bin/bash", "-c", "echo \"root:{{ PASSWORD }}\" | chpasswd" ] 
+
+COPY jupyter_notebook_config.py /root/.jupyter/
+COPY ssh_config /etc/ssh/
+COPY /home/jamies/.ssh /root/
 
 # RUN cd ~ && \
 #     git clone https://github.com/AllenCellModeling/czifile.git && \
