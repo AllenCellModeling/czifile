@@ -80,11 +80,8 @@ RUN ["/bin/bash", "-c", "echo \"root:{{ PASSWORD }}\" | chpasswd" ]
 #     /opt/conda/bin/python ./setup.py install 
 
 
-EXPOSE 22
-EXPOSE 8888
+EXPOSE 9922
 EXPOSE 9999
-EXPOSE 6006
-EXPOSE 9150
 
 WORKDIR "/root"
 
