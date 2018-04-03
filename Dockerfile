@@ -28,6 +28,8 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
+RUN ["/bin/bash", "-c", "echo \". /opt/conda/etc/profile.d/conda.sh\" >> ~/.bashrc"]
+
 RUN ["/bin/bash", "-c", "/opt/conda/bin/conda update -y -n base conda"] 
 
 RUN ["/bin/bash", "-c", "/opt/conda/bin/conda install -y nodejs"] 
@@ -76,6 +78,7 @@ RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/m
 EXPOSE 8888
 EXPOSE 9999
 EXPOSE 6006
+EXPOSE 9150
 
 WORKDIR "/root"
 
