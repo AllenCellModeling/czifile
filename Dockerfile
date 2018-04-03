@@ -27,7 +27,7 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.
     echo "conda activate" >> ~/.bashrc 
 
 COPY jupyter_notebook_config.py /root/.jupyter/
-COPY ssh_conf /etc/ssh/
+COPY ssh_config /etc/ssh/
 
 
 
@@ -47,6 +47,7 @@ RUN ["/bin/bash", "-c", "/opt/conda/bin/jupyter labextension install @jupyter-wi
 
 RUN mkdir -p /root/.config/matplotlib/ && echo 'backend : agg' > /root/.config/matplotlib/matplotlibrc
 
+RUN ["/bin/bash", "-c", "echo \"{{ PASSWORD }}\" | chpasswd"] 
 
 # RUN cd ~ && \
 #     git clone https://github.com/AllenCellModeling/czifile.git && \
