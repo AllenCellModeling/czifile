@@ -419,7 +419,8 @@ class CziFile(object):
                 executor.map(func, self.filtered_subblock_directory)
             self._fh.lock = None
         else:
-            func(self.filtered_subblock_directory)
+            for directory_entry in self.filtered_subblock_directory: 
+                func(directory_entry)
 
         if hasattr(out, 'flush'):
             out.flush()
