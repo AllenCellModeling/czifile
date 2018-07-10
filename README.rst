@@ -4,7 +4,8 @@ CZI is the native image file format of the ZEN(r) software by Carl Zeiss
 Microscopy GmbH. It stores multidimensional images and metadata from
 microscopy experiments.
 
-This repository is a mirror of the original _release of the code, intended to make ``pip`` installation possible. 
+This repository is a mirror of the original_ release of the code, intended to make ``pip`` installation possible. 
+
 .. _original: https://www.lfd.uci.edu/~gohlke/code/czifile.py.html
 
 :Author:
