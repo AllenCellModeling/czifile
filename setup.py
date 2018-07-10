@@ -10,7 +10,7 @@ import re
 import os
 
 
-with open('README.md') as f:
+with open('README.rst') as f:
     readme = f.read()
 
 with open('czifile/__init__.py') as f:
