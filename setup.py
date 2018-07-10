@@ -32,8 +32,12 @@ setup_args = dict(
     include_package_data=True,
     install_requires=[
         'numpy>=1.8.2',
+        'scipy>=0.19.0', 
         'enum34;python_version<"3.0"',
-        'futures; python_version == "2.7"'
+        'futures; python_version == "2.7"',
+        'cython',
+        'lxml',
+        'tifffile'
     ],
     license="BSD",
     zip_safe=False,
