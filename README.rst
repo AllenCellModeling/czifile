@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/AllenCellModeling/czifile.svg?branch=master
+	   :target: https://travis-ci.org/AllenCellModeling/czifile
+
 Read image and metadata from Carl Zeiss(r) ZISRAW (CZI) files.
 
 CZI is the native image file format of the ZEN(r) software by Carl Zeiss
