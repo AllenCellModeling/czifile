@@ -4,7 +4,12 @@
 from setuptools import setup, find_packages
 from distutils.core import Extension
 from distutils.log import warn
-from Cython.Distutils import build_ext
+try:
+    from Cython.Distutils import build_ext
+except ImportError:
+     def build_ext(*args, **kwargs):
+         from Cython.Build import build_ext
+         return build_ext(*args, **kwargs)
 
 import re
 import os
