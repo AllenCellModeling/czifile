@@ -406,8 +406,8 @@ class CziFile(object):
             """Read, decode, and copy subblock data."""
             subblock = directory_entry.data_segment()
             tile = subblock.data(resize=resize, order=order)
-            index = [slice(i-j, i-j+k) for i, j, k in
-                     zip(directory_entry.start, start, tile.shape)]
+            index = tuple(slice(i-j, i-j+k) for i, j, k in
+                          zip(directory_entry.start, start, tile.shape))
             try:
                 out[index] = tile
             except ValueError as e:
