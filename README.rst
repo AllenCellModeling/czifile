@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> We are no longer actively maintaining this repository. All active work by the Allen Institute for Cell Science is located under the **[AllenCell](https://github.com/AllenCell)** organization.
+
 Read image and metadata from Carl Zeiss(r) ZISRAW (CZI) files.
 
 CZI is the native image file format of the ZEN(r) software by Carl Zeiss
